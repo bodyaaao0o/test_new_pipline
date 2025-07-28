@@ -21,7 +21,7 @@ test.describe("E2E: Investor + Admin presale flow", () => {
     let adminPM: PageManager;
 
     test.beforeAll(async () => {
-        const browser1 = await chromium.launch({ headless: false });
+        const browser1 = await chromium.launch({ headless: true });
 
         investorContext = await browser1.newContext({ storageState: 'playwright/.auth/invest_login.json' });
         
@@ -41,7 +41,7 @@ test.describe("E2E: Investor + Admin presale flow", () => {
 
     test("Investor + Admin presale flow", async () => {
         
-        const browser2 = await chromium.launch({ headless: false });
+        const browser2 = await chromium.launch({ headless: true });
         
         adminContext = await browser2.newContext({ storageState: 'playwright/.auth/admin_login.json' });
         
